@@ -15,8 +15,22 @@ import pandas
 
 data = pandas.read_csv("weather_data.csv")
 
-data_dict = data.to_dict()
+# data_dict = data.to_dict()
+#
+# print(data_dict)
+#
+# temp_list = data["temp"].values.tolist()
+# print(len(temp_list))
+# print(temp_list)
+#
+# print(data["temp"].mean())
+#
+# #Get a column
+# print(data["condition"])
+# print(data.condition)
 
-print(data_dict)
+#Get a row
+print(data[data.day == "Monday"])
+
 
 
