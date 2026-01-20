@@ -29,8 +29,39 @@ data = pandas.read_csv("weather_data.csv")
 # print(data["condition"])
 # print(data.condition)
 
-#Get a row
-print(data[data.day == "Monday"])
+#Get data a row
+# print(data[data.day == "Monday"])
+# print(data[data.temp == data.temp.max()])
+
+# monday = data[data.day == "Monday"]
+# monday_temp = monday.temp[0]
+# print((monday_temp * 9/5) + 32)
+
+squirrel_data = pandas.read_csv("squirrel_data.csv")
+# print(squirrel_data["Primary Fur Color"].unique())
+grey_squirrels_count = len(squirrel_data[squirrel_data["Primary Fur Color"] == "Gray"])
+red_squirrels_count = len(squirrel_data[squirrel_data["Primary Fur Color"] == "Cinnamon"])
+black_squirrels_count = len(squirrel_data[squirrel_data["Primary Fur Color"] == "Black"])
+print(grey_squirrels_count)
+print(red_squirrels_count)
+print(black_squirrels_count)
+
+data_dict = {
+    "Fur Color": ["Gray", "Cinnamon", "Black"],
+    "Count": [grey_squirrels_count, red_squirrels_count, black_squirrels_count]
+}
+
+# Create a dataframe so that we can write into an output .csv file
+# A DataFrame stores data as rows and columns, similar to a spreadsheet or SQL table.
+# This makes relationships between values clear and easy to reason about.
+df = pandas.DataFrame(data_dict)
+df.to_csv("squirrel_count.csv")
+
+
+
+
+
+
 
 
 
